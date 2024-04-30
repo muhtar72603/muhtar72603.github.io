@@ -232,7 +232,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
+    <a href="/tags/all" class="waves-effect waves-light">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
@@ -243,7 +243,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/categories" class="waves-effect waves-light">
+    <a href="/categories/all" class="waves-effect waves-light">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
@@ -338,7 +338,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="/tags/all" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
@@ -349,7 +349,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/categories" class="waves-effect waves-light">
+		<a href="/categories/all" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
@@ -537,10 +537,28 @@
                 
                 
                 
-                <a href="/categories/111111/" title="111111: 1">
+                <a href="/categories/all/" title="all: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">111111
+                            style="background-color: #F9EBEA;">all
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/all/%E5%B7%A5%E5%85%B7/" title="工具: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">工具
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/all/%E5%AE%89%E5%85%A8/" title="安全: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">安全
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -588,7 +606,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"111111","max":2}],
+            indicator: [{"name":"all","max":3},{"name":"工具","max":3},{"name":"安全","max":3}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -599,7 +617,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1],
+                    value : [2,1,1],
                     name : '文章分类数量'
                 }
             ]
@@ -652,13 +670,13 @@ s
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="503838841"
+                   id="9953143536"
                    fixed='true'
-                   autoplay='false'
+                   autoplay='true'
                    theme='#42b983'
                    loop='all'
                    order='random'
-                   preload='auto'
+                   preload='none'
                    volume='0.7'
                    list-folded='true'
         >

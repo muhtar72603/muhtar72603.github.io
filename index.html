@@ -269,7 +269,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
+    <a href="/tags/all" class="waves-effect waves-light">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
@@ -280,7 +280,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/categories" class="waves-effect waves-light">
+    <a href="/categories/all" class="waves-effect waves-light">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
@@ -375,7 +375,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="/tags/all" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
@@ -386,7 +386,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/categories" class="waves-effect waves-light">
+		<a href="/categories/all" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
@@ -633,7 +633,7 @@
         coverSlider.carousel({
             duration: Number('120'),
             fullWidth: true,
-            indicators: 'true' === 'true',
+            indicators: 'false' === 'true',
             onCycleTo() {
                 if (!initUserPressedOrDraggedActive) {
                     // console.log('initUserPressedOrDraggedActive')
@@ -645,32 +645,11 @@
 
         let carouselIntervalId;
         
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
 
         function restartPlay() {
             
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
         };
 
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
         
     });
 </script>
@@ -688,12 +667,12 @@
                         <div class="dream">
     
     <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
+        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;Welcome
     </div>
     
     <div class="row">
         <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+            祝愿看到这里的你，惬意的活在当下
         </div>
     </div>
 </div>
@@ -701,6 +680,37 @@
                     
 
                     
+
+                    
+                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
+<div class="video-player">
+    
+    <div class="row">
+		
+			<iframe src='//player.bilibili.com/player.html?aid=1553413113&bvid=BV191421d7MQ&cid=1509687522&p=1' scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" align="middle"  style="height: 560px;" width="100%"> </iframe>
+		
+    </div>
+</div>
+
+<script src="/libs/dplayer/DPlayer.min.js"></script>
+<script>
+    $(function () {
+        new DPlayer({
+            container: document.getElementById('dplayer'),
+            autoplay: 'false' === 'true',
+            theme: '#42b983',
+            loop: 'true' === 'true',
+            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
+            preload: 'auto',
+            volume: Number('0.7'),
+            video: {
+                url: '',
+                pic: '',
+                thumbnails: ''
+            }
+        });
+    });
+</script>
 
                     
 
@@ -731,14 +741,18 @@
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="post for test">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="markdown简单介绍">
                             
-                            <span class="card-title">post for test</span>
+                            <span class="card-title">markdown简单介绍</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
+                            
+                                欢迎来到Markdown世界 🌍🚀简介Markdown是一种轻量级的标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成结构化的HTML（或者其他格式）。它的目标是实现“易读易写”。
+为什么使用Markdown 🤔
+简洁:
                             
                         </div>
                         <div class="publish-info">
@@ -749,8 +763,12 @@
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/111111/" class="post-category">
-                                    111111
+                                <a href="/categories/all/" class="post-category">
+                                    all
+                                </a>
+                                
+                                <a href="/categories/all/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
                                 </a>
                                 
                                 
@@ -761,16 +779,69 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/111/">
-                            <span class="chip bg-color">111</span>
+                        <a href="/tags/all/">
+                            <span class="chip bg-color">all</span>
                         </a>
                         
-                        <a href="/tags/222/">
-                            <span class="chip bg-color">222</span>
+                        <a href="/tags/%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/">
+                            <span class="chip bg-color">工具介绍</span>
                         </a>
                         
-                        <a href="/tags/333/">
-                            <span class="chip bg-color">333</span>
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/01/27/%E5%AE%89%E5%85%A8%E8%AE%BA%E6%96%87%E6%95%B4%E7%90%861/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="耳机震动窃听论文总结">
+                            
+                            <span class="card-title">耳机震动窃听论文总结</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                “I Can Hear You Without a Microphone: Live Speech Eavesdropping From Earphone Motion Sensors” SummaryIntroductionThe pap
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-27
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/all/" class="post-category">
+                                    all
+                                </a>
+                                
+                                <a href="/categories/all/%E5%AE%89%E5%85%A8/" class="post-category">
+                                    安全
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/all/">
+                            <span class="chip bg-color">all</span>
+                        </a>
+                        
+                        <a href="/tags/%E8%AE%BA%E6%96%87%E5%B8%A6%E8%AF%BB/">
+                            <span class="chip bg-color">论文带读</span>
                         </a>
                         
                     </div>
@@ -862,13 +933,13 @@ s
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="503838841"
+                   id="9953143536"
                    fixed='true'
-                   autoplay='false'
+                   autoplay='true'
                    theme='#42b983'
                    loop='all'
                    order='random'
-                   preload='auto'
+                   preload='none'
                    volume='0.7'
                    list-folded='true'
         >
